@@ -1,0 +1,39 @@
+# Configuration for both Python (.py) and Jupyter Notebook (.ipynb) files
+
+# Target Python version
+target-version = "py313"
+
+# Maximum line length
+line-length = 88
+
+[lint]
+# Enabled linting rules
+select = [
+    "E",    # pycodestyle errors
+    "F",    # pyflakes
+    "I",    # isort
+    "N",    # pep8-naming
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+    "UP",   # pyupgrade
+    "W",    # pycodestyle warnings
+    "RUF",  # ruff-specific rules
+]
+
+# Ignored linting rules
+ignore = [
+    "E402",  # Allow module-level imports not at top of file
+    "E501",  # Ignore line length violations
+    "N806",  # Allow uppercase variables in functions (e.g., for matrices),
+    "N812",  # Allow lowercase-imported-as-non-lowercase
+    "UP008", # Allow super-call-with-parameters
+    "B904",  # Allow raise-without-from-inside-except
+]
+
+[format]
+# Code formatting options
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+skip-magic-trailing-comma = false
+docstring-code-format = true
