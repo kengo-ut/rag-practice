@@ -101,10 +101,16 @@ def main(with_reference: bool = False):
         print(f"{response}")
 
         # 質問と回答をファイルに保存
-        output_file = Path(__file__).parent / f"output{datetime.now().strftime('%Y%m%d%H%M%S')}" / f"{query}_output.txt"
+        output_file = (
+            Path(__file__).parent
+            / f"output{datetime.now().strftime('%Y%m%d%H%M%S')}"
+            / f"{query}_output.txt"
+        )
         if with_reference:
             output_file = (
-                Path(__file__).parent / f"output{datetime.now().strftime('%Y%m%d%H%M%S')}" / f"{query}_with_reference_output.txt"
+                Path(__file__).parent
+                / f"output{datetime.now().strftime('%Y%m%d%H%M%S')}"
+                / f"{query}_with_reference_output.txt"
             )
         output_file.parent.mkdir(parents=True, exist_ok=True)
         with output_file.open("w", encoding="utf-8") as f:
